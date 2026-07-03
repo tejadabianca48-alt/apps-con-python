@@ -3,7 +3,7 @@ Diseño de dos scrip con el programa python
 
 ---
 
-## tateti
+## Tateti
 
 Un juego clasico de la infanci llevado a un programa.
 
