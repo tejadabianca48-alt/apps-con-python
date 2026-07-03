@@ -15,6 +15,6 @@ Un juego clásico de la infancia llevado a un programa, el cual es contra la com
 Este es un programa generador y lector de Tickets, de esta forma a partir de un código random se podra hallar un antiguo ticket o crear uno en relación al cotexto que el ususario desee.
 
 Librerías empleadas
--json
--random
--Pyckle
+- json
+- random
+- Pyckle
