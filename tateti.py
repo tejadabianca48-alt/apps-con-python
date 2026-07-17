@@ -25,13 +25,24 @@ def revisar_ganador(tablero, letra):
 
 mi_tablero = [1,2,3,4,5,6,7,8,9]
 while True:
+    casilleros_libres = []
+    for casilla in mi_tablero:
+         if  casilla !="X" and casilla!="O":
+              casilleros_libres.append(casilla)       
 
     #usuario
     mostrar_tablero(mi_tablero)
     movimiento = int(input("Ingrese un casillero: "))
+    while movimiento not in casilleros_libres:
+        mostrar_tablero(mi_tablero)
+        print("Esa casilla esta ocupada elija otra")
+        movimiento = int(input("Ingrese un casillero: "))
+
     jugada_us= movimiento -1
     mi_tablero[jugada_us] = "X"
     print(f"Eleguiste jugar en el casillero {movimiento}")
+
+       
 
     if revisar_ganador(mi_tablero, "X"):
         mostrar_tablero(mi_tablero)
@@ -39,11 +50,6 @@ while True:
         break 
 
     #PC 
-    casilleros_libres = []
-    for casilla in mi_tablero:
-         if  casilla !="X" and casilla!="O":
-              casilleros_libres.append(casilla)
-
     if len(casilleros_libres) == 0:
         mostrar_tablero(mi_tablero)
         print("¡HAY EMPATE! Se llenó el tablero.")

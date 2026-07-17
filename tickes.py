@@ -1,16 +1,27 @@
-import random, json, pickle
+import random, json, pickle, os 
 while True:
     print ("""Hola bienvenido al sistema de Tickes \n
     1. Generar un nuevo ticke 
     2. leer el Ticket 
     3. Salir """
     )
-    Respuesta=(int(input("Elija una opción= ")))
+    Respuesta=input("Elija una opción= ")
+    if Respuesta != Respuesta.isdigit():
+        print("\n SOLO SE ACEPTAM DIGITOS DEL 1 AL 3 (INCLUSIVE)\n")
+        continue 
     if Respuesta==1:
         
         while  True:
             numero_random=random.randrange(1000, 9999)
             print("ingrese los datos para Generar un nuevo Ticket")
+
+            if os.path.exists("ex.json"):
+                print("se hayo con exito el archivo")
+                
+            else: 
+                with open ("ex.json", "x", encoding="UTF-8") as f:
+                    f.write("{}")
+            print("Se a creado el archivo con exito")
 
             with open ("ex.json", "r", encoding="UTF-8") as f:
                 info=json.load(f)
